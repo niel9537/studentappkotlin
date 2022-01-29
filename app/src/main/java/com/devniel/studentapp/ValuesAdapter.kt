@@ -16,7 +16,7 @@ class ValuesAdapter(
 
     override fun onBindViewHolder(holder: ValuesAdapter.ViewHolder, position: Int) {
         val data = students[position]
-        holder.textStudent.text = data.nama
+        holder.textStudent.text = data.nama + " "+ data.nim +" "+ data.jurusan
     }
 
     override fun getItemCount() = students.size
