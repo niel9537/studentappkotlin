@@ -13,19 +13,19 @@ class ValuesAdapter(
         LayoutInflater.from(parent.context)
             .inflate(R.layout.adapter_mahasiswa, parent, false)
     )
-
+    //Binding data ke recyclerview
     override fun onBindViewHolder(holder: ValuesAdapter.ViewHolder, position: Int) {
         val data = students[position]
         holder.textStudent.text = data.nama + " "+ data.nim +" "+ data.jurusan
     }
 
     override fun getItemCount() = students.size
-
+    //Ambil data view dari Recyclerview
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val textStudent = view.findViewById<TextView>(R.id.txtMahasiswa)
         val btnDel = view.findViewById<TextView>(R.id.btnDelete)
     }
-
+    //Set data ke recyclerview
     public fun setData(data: List<ValuesModel.Data>){
         students.clear()
         students.addAll(data)
